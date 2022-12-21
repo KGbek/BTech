@@ -1,10 +1,13 @@
 package com.example.btech.presentation.ui.home
 
+import android.Manifest
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.system.Os.bind
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -38,6 +41,25 @@ class HomeFragment : Fragment(), HorizontalAdapter.OnItemClick, VerticalAdapter.
 
         binding.recyclerViewHorizontal.adapter = adapterHorizontal
         binding.recyclerViewVertical.adapter = adapterVertical
+
+        permissionCheck()
+    }
+
+    private fun permissionCheck() {
+        if (ActivityCompat.checkSelfPermission(
+                requireContext(),
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
+                requireContext(),
+                Manifest.permission.ACCESS_COARSE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+            val permissions = arrayOf(
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.ACCESS_COARSE_LOCATION
+            )
+            ActivityCompat.requestPermissions(requireActivity(), permissions, 0)
+        }
     }
 
     override fun clickListener(horizontalModel: HorizontalModel) {
