@@ -5,19 +5,20 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import coil.load
+import com.example.btech.R
 import com.example.btech.databinding.ItemVerticalBinding
-import com.example.btech.presentation.ui.models.HorizontalModel
 import com.example.btech.presentation.ui.models.VerticalModel
 
-class VerticalAdapter (
-    private val onItemClicked: HorizontalAdapter.OnItemClick
-): RecyclerView.Adapter<ViewHolder>() {
+class VerticalAdapter(
+    private val onItemClicked: OnItemClicked
+) :
+    RecyclerView.Adapter<VerticalAdapter.ViewHolder>() {
 
-    private val data = mutableListOf<VerticalModel>()
+    private val verticalModels = mutableListOf<VerticalModel>()
 
     fun setContent(modelVertical: List<VerticalModel>) {
-        data.clear()
-        data.addAll(modelVertical)
+        verticalModels.clear()
+        verticalModels.addAll(modelVertical)
         notifyDataSetChanged()
     }
 
@@ -27,27 +28,31 @@ class VerticalAdapter (
         return ViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        holder.onBindVertical(data[position])
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.onBindVertical(verticalModels[position])
+        holder.itemView.setOnClickListener {
+            onItemClicked.clickListener(verticalModels[position])
+        }
     }
 
     override fun getItemCount(): Int {
-        return data.size
+        return verticalModels.size
     }
 
-    inner class ViewHolder(val binding: ItemVerticalBinding) :
+    class ViewHolder(private val binding: ItemVerticalBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         fun onBindVertical(verticalModel: VerticalModel) {
             binding.imageView.load(verticalModel.image)
-            binding.imageViewLike.load(verticalModel.like)
+            binding.imageViewLike.setImageResource(R.drawable.ic_like)
             binding.textViewCredit.text = verticalModel.credit
             binding.textViewModel.text = verticalModel.model
             binding.textViewCost.text = verticalModel.cost
 
         }
     }
+
     interface OnItemClicked {
-        fun clickListener(model: VerticalModel)
+        fun clickListener(verticalModel: VerticalModel)
     }
 }

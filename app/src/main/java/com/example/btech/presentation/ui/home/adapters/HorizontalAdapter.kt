@@ -12,11 +12,11 @@ class HorizontalAdapter(
 ) :
     RecyclerView.Adapter<HorizontalAdapter.ViewHolder>() {
 
-    private val data = mutableListOf<HorizontalModel>()
+    private val horizontalModels = mutableListOf<HorizontalModel>()
 
     fun setContent(model: List<HorizontalModel>) {
-        data.clear()
-        data.addAll(model)
+        horizontalModels.clear()
+        horizontalModels.addAll(model)
         notifyDataSetChanged()
     }
 
@@ -27,26 +27,27 @@ class HorizontalAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.onBind(data[position])
+        holder.onBindHorizontal(horizontalModels[position])
         holder.itemView.setOnClickListener {
-            onItemClick.clickListener(data[position])
+            onItemClick.clickListener(horizontalModels[position])
         }
     }
 
     override fun getItemCount(): Int {
-        return data.size
+        return horizontalModels.size
     }
 
-    inner class ViewHolder(val binding: ItemHorizontalBinding) :
+    class ViewHolder(private val binding: ItemHorizontalBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun onBind(model: HorizontalModel) {
-            binding.imageViewPicture.load(model.image)
-            binding.textViewCategoery.text = model.category
+        fun onBindHorizontal(horizontalModel: HorizontalModel) {
+            binding.imageViewPicture.load(horizontalModel.image)
+            binding.textViewCategoery.text = horizontalModel.category
+
         }
     }
 
     interface OnItemClick {
-        fun clickListener(model: HorizontalModel)
+        fun clickListener(horizontalModel: HorizontalModel)
     }
 }

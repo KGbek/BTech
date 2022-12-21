@@ -11,11 +11,14 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.btech.R
 import com.example.btech.databinding.FragmentHomeBinding
 import com.example.btech.presentation.ui.home.adapters.HorizontalAdapter
+import com.example.btech.presentation.ui.home.adapters.VerticalAdapter
 import com.example.btech.presentation.ui.models.HorizontalModel
+import com.example.btech.presentation.ui.models.VerticalModel
 
-class HomeFragment : Fragment(), HorizontalAdapter.OnItemClick {
+class HomeFragment : Fragment(), HorizontalAdapter.OnItemClick, VerticalAdapter.OnItemClicked {
 
-    private lateinit var adapter: HorizontalAdapter
+    private lateinit var adapterHorizontal: HorizontalAdapter
+    private lateinit var adapterVertical: VerticalAdapter
     private lateinit var viewModel: HomeViewModel
     private val binding by viewBinding(FragmentHomeBinding::bind)
 
@@ -28,12 +31,20 @@ class HomeFragment : Fragment(), HorizontalAdapter.OnItemClick {
         super.onViewCreated(view, savedInstanceState)
 
         binding.recyclerViewHorizontal.layoutManager = LinearLayoutManager(requireContext())
-        adapter = HorizontalAdapter(this)
+        adapterHorizontal = HorizontalAdapter(this)
 
-        binding.recyclerViewHorizontal.adapter = adapter
+        binding.recyclerViewVertical.layoutManager = LinearLayoutManager(requireContext())
+        adapterVertical = VerticalAdapter(this)
+
+        binding.recyclerViewHorizontal.adapter = adapterHorizontal
+        binding.recyclerViewVertical.adapter = adapterVertical
     }
 
-    override fun clickListener(model: HorizontalModel) {
+    override fun clickListener(horizontalModel: HorizontalModel) {
+        TODO("Not yet implemented")
+    }
+
+    override fun clickListener(verticalModel: VerticalModel) {
         TODO("Not yet implemented")
     }
 
