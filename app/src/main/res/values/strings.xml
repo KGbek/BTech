@@ -12,4 +12,8 @@
     <string name="discounts">Новогодние скидки</string>
     <string name="top_news">Топ новинки</string>
     <string name="popular_categories">Популярные категории</string>
+    <string name="lots_of_a_day">Товары дня</string>
+    <string name="credit">рассрочка от 489с./ месяц</string>
+    <string name="model">Samsung Galaxy A 52 5G (EU)</string>
+    <string name="cost">45000 сом</string>
 </resources>

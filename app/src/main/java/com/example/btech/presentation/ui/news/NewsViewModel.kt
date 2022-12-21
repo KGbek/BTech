@@ -1,4 +1,4 @@
-package com.example.btech.ui.news
+package com.example.btech.presentation.ui.news
 
 import androidx.lifecycle.ViewModel
 

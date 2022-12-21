@@ -1,4 +1,4 @@
-package com.example.btech.ui.home
+package com.example.btech.presentation.ui.home
 
 import androidx.lifecycle.ViewModel
 

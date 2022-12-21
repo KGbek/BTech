@@ -1,4 +1,4 @@
-package com.example.btech.ui.profile
+package com.example.btech.presentation.ui.profile
 
 import androidx.lifecycle.ViewModel
 

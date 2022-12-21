@@ -1,4 +1,4 @@
-package com.example.btech.ui.cart
+package com.example.btech.presentation.ui.cart
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
