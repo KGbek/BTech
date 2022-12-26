@@ -6,8 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".presentation.ui.details.detailsFragment.DetailsFragment">
 
-
-    <androidx.viewpager2.widget.ViewPager2
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_pager"
         android:layout_width="330dp"
         android:layout_height="264dp"
