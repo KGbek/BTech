@@ -42,7 +42,7 @@ class HorizontalAdapter(
 
         fun onBindHorizontal(horizontalModel: HorizontalModel) {
             binding.imageViewPicture.load(horizontalModel.image)
-            binding.textViewCategoery.text = horizontalModel.category
+            binding.textViewAd.text = horizontalModel.category
 
         }
     }
