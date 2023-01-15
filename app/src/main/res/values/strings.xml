@@ -1,5 +1,15 @@
 <resources>
     <string name="app_name">BTech</string>
+    <string name="profile_picture">Profile picture</string>
+    <string name="user_name">Абдурахман Абдурахм...</string>
+    <string name="phone_number">+996550550550</string>
+    <string name="account">Аккаунт</string>
+    <string name="settings">Настройки</string>
+    <string name="favorite">Избранное</string>
+    <string name="coupons">Купоны</string>
+    <string name="history_of_buy">История покупок</string>
+    <string name="about_us">О нас</string>
+    <string name="help_and_support">Помощь и поддержка</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home">Главная</string>
@@ -16,5 +26,4 @@
     <string name="credit">рассрочка от 489с./ месяц</string>
     <string name="model">Samsung Galaxy A 52 5G (EU)</string>
     <string name="cost">45000 сом</string>
-
 </resources>

@@ -1,4 +1,182 @@
 <?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/img_avatar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".profile_fragment.ProfileFragment">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/image"
+        android:contentDescription="@string/profile_picture"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:id="@+id/tv_profile_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_medium"
+        android:text="@string/user_name"
+        android:layout_marginStart="12dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginTop="26dp"
+        app:layout_constraintStart_toEndOf="@id/imageView"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_phone_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/phone_number"
+        app:layout_constraintStart_toEndOf="@id/imageView"
+        app:layout_constraintTop_toBottomOf="@id/tv_profile_name"
+        android:layout_marginStart="12dp"
+        android:fontFamily="@font/roboto"/>
+
+    <TextView
+        android:id="@+id/tv_account"
+        android:layout_width="320dp"
+        android:layout_height="49dp"
+        android:text="@string/account"
+        android:textSize="16sp"
+        android:fontFamily="@font/roboto"
+        android:layout_marginTop="8dp"
+        android:paddingVertical="12dp"
+        android:paddingEnd="16dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView"/>
+    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider_color"
+        app:layout_constraintTop_toBottomOf="@id/tv_account"/>
+
+    <TextView
+        android:id="@+id/tv_setting"
+        android:layout_width="320dp"
+        android:layout_height="49dp"
+        android:text="@string/settings"
+        android:textSize="16sp"
+        android:fontFamily="@font/roboto"
+        android:paddingVertical="12dp"
+        android:paddingEnd="16dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_account"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider_color"
+        app:layout_constraintTop_toBottomOf="@id/tv_setting"/>
+
+    <TextView
+        android:id="@+id/tv_favorite"
+        android:layout_width="320dp"
+        android:layout_height="49dp"
+        android:text="@string/favorite"
+        android:textSize="16sp"
+        android:fontFamily="@font/roboto"
+        android:paddingVertical="12dp"
+        android:paddingEnd="16dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_setting"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider_color"
+        app:layout_constraintTop_toBottomOf="@id/tv_favorite"/>
+
+    <TextView
+        android:id="@+id/tv_coupons"
+        android:layout_width="320dp"
+        android:layout_height="49dp"
+        android:text="@string/coupons"
+        android:textSize="16sp"
+        android:fontFamily="@font/roboto"
+        android:paddingVertical="12dp"
+        android:paddingEnd="16dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_favorite"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider_color"
+        app:layout_constraintTop_toBottomOf="@id/tv_coupons"/>
+
+    <TextView
+        android:id="@+id/tv_buy_history"
+        android:layout_width="320dp"
+        android:layout_height="49dp"
+        android:text="@string/history_of_buy"
+        android:textSize="16sp"
+        android:fontFamily="@font/roboto"
+        android:paddingVertical="12dp"
+        android:paddingEnd="16dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_coupons"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider_color"
+        app:layout_constraintTop_toBottomOf="@id/tv_buy_history"/>
+
+    <TextView
+        android:id="@+id/tv_about_us"
+        android:layout_width="320dp"
+        android:layout_height="49dp"
+        android:text="@string/about_us"
+        android:textSize="16sp"
+        android:fontFamily="@font/roboto"
+        android:paddingVertical="12dp"
+        android:paddingEnd="16dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_buy_history"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider_color"
+        app:layout_constraintTop_toBottomOf="@id/tv_about_us"/>
+
+    <TextView
+        android:id="@+id/tv_help_and_support"
+        android:layout_width="320dp"
+        android:layout_height="49dp"
+        android:text="@string/help_and_support"
+        android:textSize="16sp"
+        android:fontFamily="@font/roboto"
+        android:paddingVertical="12dp"
+        android:paddingEnd="16dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_about_us"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/divider_color"
+        app:layout_constraintTop_toBottomOf="@id/tv_help_and_support"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
